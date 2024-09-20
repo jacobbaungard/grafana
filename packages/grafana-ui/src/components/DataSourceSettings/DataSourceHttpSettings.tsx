@@ -226,6 +226,22 @@ export const DataSourceHttpSettings = (props: HttpSettingsProps) => {
                 />
               </div>
               <div className="gf-form">
+                <InlineFormLabel
+                  width={13}
+                  tooltip="Grafana proxy deletes forwarded HTTP headers by default. Specify HTTP headers by name that should be forwarded to the data source."
+                >
+                  Allowed HTTP headers
+                </InlineFormLabel>
+                <TagsInput
+                  tags={dataSourceConfig.jsonData.forwardHeaders}
+                  width={40}
+                  onChange={(headers) =>
+                    onSettingsChange({ jsonData: { ...dataSourceConfig.jsonData, forwardHeaders: headers } })
+                  }
+                  disabled={dataSourceConfig.readOnly}
+                />
+              </div>
+              <div className="gf-form">
                 <FormField
                   label="Timeout"
                   type="number"

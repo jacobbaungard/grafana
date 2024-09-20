@@ -139,6 +139,18 @@ func (ds DataSource) AllowedCookies() []string {
 	return []string{}
 }
 
+// AllowedCookies parses the jsondata.keepCookies and returns a list of
+// allowed cookies, otherwise an empty list.
+func (ds DataSource) ForwardHeaders() []string {
+	if ds.JsonData != nil {
+		if forwardHeaders := ds.JsonData.Get("forwardHeaders"); forwardHeaders != nil {
+			return forwardHeaders.MustStringArray()
+		}
+	}
+
+	return []string{}
+}
+
 // Specific error type for grpc secrets management so that we can show more detailed plugin errors to users
 type ErrDatasourceSecretsPluginUserFriendly struct {
 	Err string
