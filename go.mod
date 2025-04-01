@@ -2,7 +2,7 @@ module github.com/grafana/grafana
 
 go 1.23.0
 
-toolchain go1.24.1
+toolchain go1.23.0
 
 // Override docker/docker to avoid:
 // go: github.com/drone-runners/drone-runner-docker@v1.8.2 requires
