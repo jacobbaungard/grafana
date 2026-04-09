@@ -32,3 +32,5 @@ use (
 replace github.com/prometheus/alertmanager => github.com/grafana/prometheus-alertmanager v0.25.1-0.20250620093340-be61a673dee6
 
 replace github.com/crewjam/saml => github.com/grafana/saml v0.4.15-0.20240917091248-ae3bbdad8a56
+
+replace github.com/antchfx/xpath => github.com/antchfx/xpath v1.3.6
